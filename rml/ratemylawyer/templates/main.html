@@ -1,0 +1,92 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <body style="background-color:rgba(244, 123, 135, 0.224);">
+        {% load static %}
+    <title> <center>Rate My Lawyer</center> </title>
+    <body>
+        <div class="banner">
+            <div class = "banner__content"></div>
+                <div class="banner__text"></div>
+                    <h3 style ="font-size: 50px;"><center>Get the law on your side! </center></h3>
+      </div>
+<style>
+
+    
+    html,
+    body{
+        margin: 0;
+    }
+    .banner {
+        background: rgb(191, 223, 228); 
+    }
+    .banner__content {
+        padding: 5px;
+        max-width: 1000;
+        margin: 0 auto; 
+        display: flex;
+        align-items: center;   
+    }
+
+</style>
+<center><img src="{% static 'manny.png' %}" alt="My image"></center> 
+<br>
+<br>
+<div class="container">
+    <center>
+    <a href="{% url 'main' %}">Home</a>
+    <a href="{% url 'media' %}">Media Page</a>
+    <a href="{% url 'contact' %}">Contact Page</a>
+    <a href="{% url 'browse' %}">Browse Reviews</a>
+    <a href="{% url 'create' %}">Create Review</a>
+</center>
+<br>
+<br>
+
+</div>
+</head>
+<body>
+    
+    
+
+    
+
+                    
+<body>
+
+
+
+
+
+<div>
+        <span
+            style="color: black; background-color: rgb(91, 136, 151); margin-right: 4px"
+            >{{ tag.name }}</span
+        >
+     
+    </div>
+</div>
+
+
+
+<center>
+    <button type="button" style = "background-color:rgb(255, 255, 255); width:600px; height:150px; border-radius: 20px; font-size: 30px;">
+        <a href="{% url 'browse' %}">Browse Lawyer Reviews</a>
+    </button>
+    <button type="button" style = "background-color:rgb(255, 255, 255); width:600px; height:150px; border-radius: 20px; font-size: 30px;">
+        <a href="{% url 'create' %}">Create a New Lawyer Review</a>
+    </button>
+</center>
+    <br>
+    <br>
+    <br>
+    <img src="{% static 'thumbs_down.png' %}" alt="Thumbs Down" width="150" height="150" align="right">
+    <img src="{% static 'thumbs_up.png' %}" alt="Thumbs Up" width="150" height="150" align="left">
+</body>
+</html>

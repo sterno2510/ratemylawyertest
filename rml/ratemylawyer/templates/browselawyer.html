@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html,
+        body{
+            margin: 0;
+        }
+        .banner {
+            background: rgb(191, 223, 228); 
+        }
+        .banner__content {
+            padding: 5px;
+            max-width: 1000;
+            margin: 0 auto; 
+            display: flex;
+            align-items: center;   
+        }
+    
+    </style>
+    </head>
+    <body>
+        <div class="banner">
+            <div class = "banner__content"></div>
+                <div class="banner__text"></div>
+    
+                  <h1> <center>Rate my Lawyer</center><h1>
+                    <h3><center>Get the law on your side! </center> </h3>
+        </div>
+    <title>Document</title>
+</head>
+<body
+<body>
+<center>    <h1>Browse Lawyers</h1>
+
+    <div class="container">
+            <a href="{% url 'main' %}">Home</a>
+            <a href="{% url 'media' %}">Media Page</a>
+            <a href="{% url 'contact' %}">Contact Page</a>   
+            <a href="{% url 'browse' %}">Browse Reviews</a>   
+            <a href="{% url 'create' %}">Create Review</a>
+    </div>
+    <hr>
+</center>
+
+ <body style="background-color:rgba(244, 123, 135, 0.224);">
+ 
+
+{% for review in reviews %}
+<center> <button type="button" style = "background-color:rgb(255, 255, 255); width:150px; height:50px; border-radius: 20px; font-size: 15px;">
+    <a href="{% url 'edit' review.lawyer_id %}">Edit This Review</a>
+</button><br>
+<button type="button" style = "background-color:rgb(255, 255, 255); width:150px; height:50px; border-radius: 20px; font-size: 15px;">
+    <a href="{% url 'browse_comment' review.lawyer_id %}">See Comments for This Review</a>
+</button>
+</center>
+        <div style=" text-align: center; padding: 32px 0px">
+            <div style = "display: inline-block; text-align: left;">
+                <h2>Name: {{ review.name }}</h2>
+                <p><b>Address:</b> {{ review.address }}</p>
+                <p><b>Phone:</b> {{ review.phone }}</p>
+                <p><b>Email:</b> {{ review.email }}</p>
+                <p><b>License:</b> {{ review.license }}</p>
+                <p><b>Website:</b> {{ review.website}}</p>
+                <p><b>Rating:</b> {{ review.rating }}</p>
+                <p><b>Cost:</b> {{ review.cost }}</p>
+            </div>   
+        <div>
+            <H2>Specialties</H2>
+            {% for specialty in review.specialties.all %}
+            <span 
+                style="color: rgb(255, 255, 255); background-color: rgb(54, 54, 54); margin-right: 4px"
+                >{{ specialty.name }}</span
+            >
+            {% endfor %}   
+             
+        </div>
+        <br>
+       
+       
+        <hr> 
+    {% endfor %}
+
+
+</body>
+</html>
